@@ -8,9 +8,13 @@ export function loadHome() {
     headerText.textContent = "WeatherCast";
     homeHeader.appendChild(headerText);
 
+    const siteBody = document.createElement('div');
+    siteBody.classList.add('site-body');
+    document.body.appendChild(siteBody);
+
     const searchContainer = document.createElement('div');
     searchContainer.classList.add('search-container');
-    document.body.appendChild(searchContainer);
+    siteBody.appendChild(searchContainer);
 
     const searchHeading = document.createElement('p');
     searchHeading.classList.add('search-heading');
