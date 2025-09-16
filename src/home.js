@@ -3,16 +3,23 @@ export function loadHome() {
     homeHeader.classList.add('home-header');
     document.body.appendChild(homeHeader);
 
+    const headerText = document.createElement('p');
+    headerText.classList.add('home-header');
+    headerText.textContent = "WeatherCast";
+    homeHeader.appendChild(headerText);
+
     const searchContainer = document.createElement('div');
     searchContainer.classList.add('search-container');
     document.body.appendChild(searchContainer);
 
     const searchHeading = document.createElement('p');
     searchHeading.classList.add('search-heading');
+    searchHeading.textContent = "Welcome to WeatherCast!";
     searchContainer.appendChild(searchHeading);
 
     const searchDesc = document.createElement('p');
     searchDesc.classList.add('search-desc');
+    searchDesc.textContent = "Enter a location name or ZIP code to see its forecast."
     searchContainer.appendChild(searchDesc);
 
     const searchBar = document.createElement('input');
