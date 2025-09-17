@@ -4,7 +4,7 @@ export function loadHome() {
     document.body.appendChild(homeHeader);
 
     const headerText = document.createElement('p');
-    headerText.classList.add('home-header');
+    headerText.classList.add('header-text');
     headerText.textContent = "WeatherCast";
     homeHeader.appendChild(headerText);
 
