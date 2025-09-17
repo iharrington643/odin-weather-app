@@ -3,7 +3,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: lightblue;
     font-family: Poppins;
 }
 
@@ -14,10 +13,17 @@ body {
     height: max(70px, 10vh);
     background-color: white;
     display: flex;
+    gap: 10px;
     align-items: center;
 }
 
+.header-logo {
+    width: 65px;
+    height: 65px;
+}
+
 .header-text {
+    font-weight: bold;
     font-size: 30px;
 }
 
@@ -27,10 +33,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(./images/clouds-1923545_1280.png);
+    background-size: cover;
 }
 
 .search-container {
-    background-color: rgb(114, 172, 191);
+    background-color: rgba(37, 149, 190, 0.709);
     padding: 25px;
     height: 225px;
     width: clamp(365px, 50vw, 500px);
@@ -61,7 +69,7 @@ body {
     font-weight: bold;
     grid-row: 1 / 2;
     color: white;
-    -webkit-text-stroke: 1px rgb(41, 119, 145);
+    -webkit-text-stroke: 1px rgb(37, 150, 190);
 }
 
 .search-desc {
