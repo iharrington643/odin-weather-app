@@ -38,7 +38,7 @@ body {
     background-size: cover;
 }
 
-.search-container {
+#search-container {
     background-color: rgba(37, 149, 190, 0.709);
     padding: 25px;
     height: 225px;
@@ -51,7 +51,7 @@ body {
     text-align: center;
 }
 
-.search-bar {
+#search-bar {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +64,7 @@ body {
     font-family: 'Poppins';
 }
 
-.search-heading {
+#search-heading {
     margin-bottom: 0px;
     font-size: 25px;
     font-weight: bold;
@@ -73,7 +73,7 @@ body {
     -webkit-text-stroke: 1px rgb(37, 150, 190);
 }
 
-.search-desc {
+#search-desc {
     font-style: italic;
     height: 45px;
     font-size: 14px;
@@ -84,6 +84,6 @@ body {
     white-space: nowrap;
 }
 
-.search-bar:focus {
+#search-bar:focus {
     outline: none;
 }
