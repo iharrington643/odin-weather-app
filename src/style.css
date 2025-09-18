@@ -8,23 +8,24 @@ body {
 
 .home-header {
     margin: 0;
-    padding-left: 4vw;
+    padding-left: max(20px, 2vw);
     width: 96vw;
     height: max(70px, 10vh);
     background-color: white;
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
 .header-logo {
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
 }
 
 .header-text {
-    font-weight: bold;
-    font-size: 30px;
+    color: rgba(34, 128, 171, 1);
+    font-weight: 400;
+    font-size: 37px;
 }
 
 .site-body {
