@@ -28,7 +28,7 @@ body {
     font-size: 37px;
 }
 
-.site-body {
+#site-body {
     width: 100vw;
     height: max(350px, 90vh);
     display: flex;

@@ -16,26 +16,26 @@ export function loadHome() {
     homeHeader.appendChild(headerText);
 
     const siteBody = document.createElement('div');
-    siteBody.classList.add('site-body');
+    siteBody.id = 'site-body';
     document.body.appendChild(siteBody);
 
     const searchContainer = document.createElement('div');
-    searchContainer.classList.add('search-container');
+    searchContainer.id = 'search-container';
     siteBody.appendChild(searchContainer);
 
     const searchHeading = document.createElement('p');
-    searchHeading.classList.add('search-heading');
+    searchHeading.id = 'search-heading';
     searchHeading.textContent = "Welcome to WeatherCast!";
     searchContainer.appendChild(searchHeading);
 
     const searchDesc = document.createElement('p');
-    searchDesc.classList.add('search-desc');
+    searchDesc.id = 'search-desc';
     searchDesc.textContent = "Enter a location name or ZIP code to see its forecast."
     searchContainer.appendChild(searchDesc);
 
     const searchBar = document.createElement('input');
     searchBar.setAttribute("type", "search");
     searchBar.placeholder = 'Search for a location...';
-    searchBar.classList.add('search-bar');
+    searchBar.id = 'search-bar';
     searchContainer.appendChild(searchBar);
 }
