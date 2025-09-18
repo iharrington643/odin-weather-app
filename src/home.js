@@ -12,7 +12,7 @@ export function loadHome() {
 
     const headerText = document.createElement('p');
     headerText.classList.add('header-text');
-    headerText.textContent = "WeatherCast";
+    headerText.innerHTML = 'Weather<b><span style="color: #F4CE26;">Cast</span></b>';
     homeHeader.appendChild(headerText);
 
     const siteBody = document.createElement('div');
