@@ -16,6 +16,7 @@ function launchSearch() {
         if (validLocation != false) {
             loadWeatherPage();
         } else {
+            alert("Invalid location.  Please try again.");
             searchForm.reset();
             validLocation = true;
         }
