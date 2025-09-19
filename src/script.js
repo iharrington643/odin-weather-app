@@ -4,8 +4,6 @@ import { loadWeatherPage } from './weather.js';
 
 export let jsonObject = {};
 
-loadHome();
-
 function launchSearch() {
     const searchForm = document.getElementById('search-form');
 
@@ -34,4 +32,5 @@ async function fetchWeather(location) {
     }
 }
 
+loadHome();
 launchSearch();
