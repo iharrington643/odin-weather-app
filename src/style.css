@@ -87,3 +87,11 @@ body {
 #search-bar:focus {
     outline: none;
 }
+
+#weather-container {
+    background-color: rgba(37, 149, 190, 0.709);
+    padding: 25px;
+    height: 470px;
+    width: clamp(365px, 80vw, 1000px);
+    border-radius: 10px;
+}
