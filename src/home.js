@@ -33,9 +33,15 @@ export function loadHome() {
     searchDesc.textContent = "Enter a location name or ZIP code to see its forecast."
     searchContainer.appendChild(searchDesc);
 
+    const searchForm = document.createElement('form');
+    searchForm.action = '/search';
+    searchForm.setAttribute("method", "get");
+    searchForm.id = 'search-form';
+    searchContainer.appendChild(searchForm);
+
     const searchBar = document.createElement('input');
     searchBar.setAttribute("type", "search");
     searchBar.placeholder = 'Search for a location...';
     searchBar.id = 'search-bar';
-    searchContainer.appendChild(searchBar);
+    searchForm.appendChild(searchBar);
 }
