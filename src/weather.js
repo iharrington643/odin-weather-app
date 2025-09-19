@@ -1,3 +1,5 @@
+import { jsonObject } from './script.js';
+
 export function loadWeatherPage() {
     const siteBody = document.getElementById('site-body');
     siteBody.innerHTML = '';
@@ -6,9 +8,10 @@ export function loadWeatherPage() {
     weatherContainer.id = 'weather-container';
     siteBody.appendChild(weatherContainer);
 
-    const dailyWeatherPanel = document.createElement('div');
-    dailyWeatherPanel.id = 'daily-weather-panel';
-    weatherContainer.appendChild(dailyWeatherPanel);
+    const currentWeatherPanel = document.createElement('div');
+    currentWeatherPanel.id = 'current-weather-panel';
+    currentWeatherPanel.textContent = jsonObject.currentConditions.temp;
+    weatherContainer.appendChild(currentWeatherPanel);
 
     const weeklyWeatherContainer = document.createElement('div');
     weeklyWeatherContainer.id = 'weekly-weather-container';
