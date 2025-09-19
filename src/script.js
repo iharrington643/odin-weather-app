@@ -2,19 +2,20 @@ import './style.css';
 import { loadHome } from './home.js';
 import { loadWeatherPage } from './weather.js';
 
-export const jsonObject = {};
+export let jsonObject = {};
 
 loadHome();
 
 function launchSearch() {
     const searchForm = document.getElementById('search-form');
 
-    searchForm.addEventListener('submit', function(event) {
+    searchForm.addEventListener('submit', async function(event) {
         const searchInput = document.getElementById('search-bar').value;
 
         event.preventDefault();
         loadWeatherPage();
-        fetchWeather(searchInput);
+        await fetchWeather(searchInput);
+        console.log(jsonObject);
     })
 }
 
@@ -25,11 +26,12 @@ async function fetchWeather(location) {
         if (!response.ok) {
             throw new Error(`Status: ${response.status}`);
         }
+
         const jsonData = await response.json();
-        jsonObject = JSON.parse(jsonData);
+        jsonObject = jsonData;
 
     } catch (error) {
-        console.error(error.message);
+        console.error("Error fetching data", error);
     }
 }
 
