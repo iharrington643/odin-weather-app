@@ -1,4 +1,4 @@
 export function loadWeatherPage() {
-    siteBody = document.getElementById('site-body');
-    siteBody.empty();
+    const siteBody = document.getElementById('site-body');
+    siteBody.innerHTML = '';
 }
