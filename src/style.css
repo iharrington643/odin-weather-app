@@ -118,3 +118,27 @@ body {
     background-color: white;
     border-left: 8px solid #F4CE26;
 }
+
+.unit-toggle {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    width: 60px;
+    height: 35px;
+    background-color: rgb(37, 150, 190);
+    border-radius: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.toggle-button {
+    font-size: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: white;
+    height: 28px;
+    width: 28px;
+}
