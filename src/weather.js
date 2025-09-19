@@ -1,5 +1,10 @@
 import { jsonObject } from './script.js';
 
+function fahrenheitToCelsius(tempF) {
+    degreesCelsius = (tempF - 32) * (5/9);
+    return degreesCelsius;
+}
+
 export function loadWeatherPage() {
     const siteBody = document.getElementById('site-body');
     siteBody.innerHTML = '';
@@ -10,7 +15,10 @@ export function loadWeatherPage() {
 
     const currentWeatherPanel = document.createElement('div');
     currentWeatherPanel.id = 'current-weather-panel';
-    currentWeatherPanel.textContent = jsonObject.currentConditions.temp;
+    currentWeatherPanel.innerHTML = `${jsonObject.resolvedAddress}<br>`;
+    currentWeatherPanel.innerHTML += `${jsonObject.days[0].datetime}<br>`;
+    currentWeatherPanel.innerHTML += `${jsonObject.currentConditions.temp} °F<br>`;
+    currentWeatherPanel.innerHTML += `${jsonObject.days[0].tempmin} °F - ${jsonObject.days[0].tempmax} °F`;
     weatherContainer.appendChild(currentWeatherPanel);
 
     const weeklyWeatherContainer = document.createElement('div');
