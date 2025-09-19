@@ -15,7 +15,6 @@ function launchSearch() {
         event.preventDefault();
         await fetchWeather(searchInput);
         loadWeatherPage();
-        console.log(jsonObject);
     })
 }
 
