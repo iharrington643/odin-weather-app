@@ -5,4 +5,37 @@ export function loadWeatherPage() {
     const weatherContainer = document.createElement('div');
     weatherContainer.id = 'weather-container';
     siteBody.appendChild(weatherContainer);
+
+    const dailyWeatherPanel = document.createElement('div');
+    dailyWeatherPanel.id = 'daily-weather-panel';
+    weatherContainer.appendChild(dailyWeatherPanel);
+
+    const weeklyWeatherContainer = document.createElement('div');
+    weeklyWeatherContainer.id = 'weekly-weather-container';
+    weatherContainer.appendChild(weeklyWeatherContainer);
+
+    const weatherOne = document.createElement('div');
+    weatherOne.id = 'weather-one';
+    weatherOne.classList.add('weather-panel');
+    weeklyWeatherContainer.appendChild(weatherOne);
+
+    const weatherTwo = document.createElement('div');
+    weatherTwo.id = 'weather-two';
+    weatherTwo.classList.add('weather-panel');
+    weeklyWeatherContainer.appendChild(weatherTwo);
+
+    const weatherThree = document.createElement('div');
+    weatherThree.id = 'weather-three';
+    weatherThree.classList.add('weather-panel');
+    weeklyWeatherContainer.appendChild(weatherThree);
+
+    const weatherFour = document.createElement('div');
+    weatherFour.id = 'weather-four';
+    weatherFour.classList.add('weather-panel');
+    weeklyWeatherContainer.appendChild(weatherFour);
+
+    const weatherFive = document.createElement('div');
+    weatherFive.id = 'weather-five';
+    weatherFive.classList.add('weather-panel');
+    weeklyWeatherContainer.appendChild(weatherFive);
 }
