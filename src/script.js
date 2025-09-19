@@ -13,8 +13,8 @@ function launchSearch() {
         const searchInput = document.getElementById('search-bar').value;
 
         event.preventDefault();
-        loadWeatherPage();
         await fetchWeather(searchInput);
+        loadWeatherPage();
         console.log(jsonObject);
     })
 }
