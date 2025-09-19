@@ -3,6 +3,7 @@ import { loadHome } from './home.js';
 import { loadWeatherPage } from './weather.js';
 
 export let jsonObject = {};
+let validLocation = true;
 
 function launchSearch() {
     const searchForm = document.getElementById('search-form');
@@ -12,7 +13,12 @@ function launchSearch() {
 
         event.preventDefault();
         await fetchWeather(searchInput);
-        loadWeatherPage();
+        if (validLocation != false) {
+            loadWeatherPage();
+        } else {
+            searchForm.reset();
+            validLocation = true;
+        }
     })
 }
 
@@ -29,6 +35,7 @@ async function fetchWeather(location) {
 
     } catch (error) {
         console.error("Error fetching data", error);
+        validLocation = false;
     }
 }
 
