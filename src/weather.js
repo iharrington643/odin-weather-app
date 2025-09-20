@@ -1,6 +1,6 @@
 import { jsonObject } from './script.js';
 import clearDay from './images/clear-day.png';
-import clearNight from './images/clear-night.jpg';
+import clearNight from './images/clear-night.png';
 import cloudy from './images/cloudy.png';
 import fog from './images/fog.png';
 import partlyCloudyDay from './images/partly-cloudy-day.png';
@@ -39,8 +39,13 @@ export function loadWeatherPage() {
 
     const currentWeatherIcon = document.createElement('img');
     currentWeatherIcon.id = 'current-weather-icon';
+    currentWeatherIcon.src = cloudy;
     currentWeatherIcon.classList.add('weather-icon');
     currentWeatherPanel.appendChild(currentWeatherIcon);
+
+    const currentWeatherText = document.createElement('p');
+    currentWeatherText.id = 'current-weather-text';
+    currentWeatherPanel.appendChild(currentWeatherText);
 
     const weeklyWeatherContainer = document.createElement('div');
     weeklyWeatherContainer.id = 'weekly-weather-container';
@@ -71,7 +76,7 @@ export function loadWeatherPage() {
     weatherFive.classList.add('weather-panel');
     weeklyWeatherContainer.appendChild(weatherFive);
 
-    function loadTextContent(unit) {
+    function loadCurrentTextContent(unit) {
         let temperature = jsonObject.currentConditions.temp;
         let minTemp = jsonObject.days[0].tempmin;
         let maxTemp = jsonObject.days[0].tempmax;
@@ -82,13 +87,13 @@ export function loadWeatherPage() {
             maxTemp = fahrenheitToCelsius(maxTemp);
         }
 
-        currentWeatherPanel.innerHTML = `${jsonObject.resolvedAddress}<br>`;
-        currentWeatherPanel.innerHTML += `${jsonObject.days[0].datetime}<br>`;
-        currentWeatherPanel.innerHTML += `${temperature} ${unit}<br>`;
-        currentWeatherPanel.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
+        currentWeatherText.innerHTML = `${jsonObject.address}<br>`;
+        currentWeatherText.innerHTML += `${jsonObject.days[0].datetime}<br>`;
+        currentWeatherText.innerHTML += `${temperature} ${unit}<br>`;
+        currentWeatherText.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
     }
 
-    function loadIcons(icon1) {
+    function loadCurrentIcon(icon1) {
         if (icon1 == 'clear-day') {
             currentWeatherIcon.src = clearDay;
         } else if (icon1 == 'clear-night') {
@@ -109,9 +114,9 @@ export function loadWeatherPage() {
             currentWeatherIcon.src = wind;
         }
     }
-
-    loadIcons(jsonObject.currentConditions.icon);
-    loadTextContent(temperatureUnit);
+    
+    loadCurrentIcon(jsonObject.currentConditions.icon);
+    loadCurrentTextContent(temperatureUnit);
 
     toggleButton.addEventListener('click', function() {
         if (temperatureUnit == '°F') {
@@ -123,6 +128,6 @@ export function loadWeatherPage() {
         }
 
         toggleButton.innerHTML = `${temperatureUnit}`;
-        loadTextContent(temperatureUnit);
+        loadCurrentTextContent(temperatureUnit);
     });
 }
