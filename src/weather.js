@@ -14,7 +14,20 @@ export function loadWeatherPage() {
 
     const toggleButton = document.createElement('button');
     toggleButton.classList.add('toggle-button');
+    toggleButton.innerHTML = `${temperatureUnit}`;
     unitToggle.appendChild(toggleButton);
+
+    toggleButton.addEventListener('click', function() {
+        if (temperatureUnit == '°F') {
+            temperatureUnit = '°C';
+            unitToggle.style.justifyContent = 'flex-end';
+        } else {
+            temperatureUnit = '°F';
+            unitToggle.style.justifyContent = 'flex-start';
+        }
+
+        toggleButton.innerHTML = `${temperatureUnit}`;
+    });
 
     const siteBody = document.getElementById('site-body');
     siteBody.innerHTML = '';
