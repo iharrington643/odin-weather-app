@@ -1,14 +1,13 @@
 import { jsonObject } from './script.js';
 import clearDay from './images/clear-day.png';
-import clearNight from './images/clear-night.png';
+import clearNight from './images/clear-night.jpg';
 import cloudy from './images/cloudy.png';
 import fog from './images/fog.png';
-import partlyCloudyDay from './images/partly-cloudy-day';
-import partlyCloudyNight from './images/partly-cloudy-night';
+import partlyCloudyDay from './images/partly-cloudy-day.png';
+import partlyCloudyNight from './images/partly-cloudy-night.png';
 import rain from './images/rain.png';
 import snow from './images/snow.png';
 import wind from './images/wind.png';
-
 
 let temperatureUnit = '°F';
 
@@ -89,8 +88,26 @@ export function loadWeatherPage() {
         currentWeatherPanel.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
     }
 
-    function loadIcons(icon) {
-        currentWeatherIcon.src = `./images/${icon}`;
+    function loadIcons(icon1) {
+        if (icon1 == 'clear-day') {
+            currentWeatherIcon.src = clearDay;
+        } else if (icon1 == 'clear-night') {
+            currentWeatherIcon.src = clearNight;
+        } else if (icon1 == 'cloudy') {
+            currentWeatherIcon.src = cloudy;
+        } else if (icon1 == 'fog') {
+            currentWeatherIcon.src = fog;
+        } else if (icon1 == 'partly-cloudy-day') {
+            currentWeatherIcon.src = partlyCloudyDay;
+        } else if (icon1 == 'partly-cloudy-night') {
+            currentWeatherIcon.src = partlyCloudyNight;
+        } else if (icon1 == 'rain') {
+            currentWeatherIcon.src = rain;
+        } else if (icon1 == 'snow') {
+            currentWeatherIcon.src = snow;
+        } else {
+            currentWeatherIcon.src = wind;
+        }
     }
 
     loadIcons(jsonObject.currentConditions.icon);
