@@ -28,6 +28,11 @@ export function loadWeatherPage() {
     currentWeatherPanel.id = 'current-weather-panel';
     weatherContainer.appendChild(currentWeatherPanel);
 
+    const currentWeatherIcon = document.createElement('img');
+    currentWeatherIcon.id = 'current-weather-icon';
+    currentWeatherIcon.classList.add('weather-icon');
+    currentWeatherPanel.appendChild(currentWeatherIcon);
+
     const weeklyWeatherContainer = document.createElement('div');
     weeklyWeatherContainer.id = 'weekly-weather-container';
     weatherContainer.appendChild(weeklyWeatherContainer);
@@ -74,6 +79,11 @@ export function loadWeatherPage() {
         currentWeatherPanel.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
     }
 
+    function loadIcons(icon) {
+        currentWeatherIcon.src = `./images/${icon}`;
+    }
+
+    loadIcons(jsonObject.currentConditions.icon);
     loadTextContent(temperatureUnit);
 
     toggleButton.addEventListener('click', function() {
