@@ -102,6 +102,10 @@ body {
     background-color: white;
     border-radius: 10px;
     border-left: 8px solid #F4CE26;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
 }
 
 #weekly-weather-container {
@@ -143,7 +147,13 @@ body {
     width: 28px;
 }
 
-.weather-icon {
-    width: 60px;
-    height: 60px;
+#current-weather-text {
+    font-family: 'Poppins';
+    font-size: 18px;
+}
+
+#current-weather-icon {
+    margin-left: 25px;
+    width: 19%;
+    height: 65%;
 }
