@@ -39,8 +39,6 @@ export function loadWeatherPage() {
 
     const currentWeatherIcon = document.createElement('img');
     currentWeatherIcon.id = 'current-weather-icon';
-    currentWeatherIcon.src = cloudy;
-    currentWeatherIcon.classList.add('weather-icon');
     currentWeatherPanel.appendChild(currentWeatherIcon);
 
     const currentWeatherText = document.createElement('p');
@@ -76,6 +74,17 @@ export function loadWeatherPage() {
     weatherFive.classList.add('weather-panel');
     weeklyWeatherContainer.appendChild(weatherFive);
 
+    const weatherPanels = document.getElementsByClassName('weather-panel');
+    weatherPanels.forEach(weatherPanel => {
+        const weatherPanelIcon = document.createElement('img');
+        weatherPanelIcon.classList.add = 'weather-panel-icon';
+        weatherPanel.appendChild(weatherPanelIcon);
+
+        const weatherPanelText = document.createElement('p');
+        weatherPanelText.classList.add = 'weather-panel-text';
+        weatherPanel.appendChild(weatherPanelText);
+    }) 
+
     function loadCurrentTextContent(unit) {
         let temperature = jsonObject.currentConditions.temp;
         let minTemp = jsonObject.days[0].tempmin;
@@ -93,25 +102,39 @@ export function loadWeatherPage() {
         currentWeatherText.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
     }
 
-    function loadCurrentIcon(icon1) {
-        if (icon1 == 'clear-day') {
+    function loadCurrentIcon(icon) {
+        if (icon == 'clear-day') {
             currentWeatherIcon.src = clearDay;
-        } else if (icon1 == 'clear-night') {
+        } else if (icon == 'clear-night') {
             currentWeatherIcon.src = clearNight;
-        } else if (icon1 == 'cloudy') {
+        } else if (icon == 'cloudy') {
             currentWeatherIcon.src = cloudy;
-        } else if (icon1 == 'fog') {
+        } else if (icon == 'fog') {
             currentWeatherIcon.src = fog;
-        } else if (icon1 == 'partly-cloudy-day') {
+        } else if (icon == 'partly-cloudy-day') {
             currentWeatherIcon.src = partlyCloudyDay;
-        } else if (icon1 == 'partly-cloudy-night') {
+        } else if (icon == 'partly-cloudy-night') {
             currentWeatherIcon.src = partlyCloudyNight;
-        } else if (icon1 == 'rain') {
+        } else if (icon == 'rain') {
             currentWeatherIcon.src = rain;
-        } else if (icon1 == 'snow') {
+        } else if (icon == 'snow') {
             currentWeatherIcon.src = snow;
         } else {
             currentWeatherIcon.src = wind;
+        }
+    }
+
+    function loadWeeklyIcons(day) {
+        if (day == 1) {
+            icon == jsonObject.days[0].icon;
+        } else if (day == 2) {
+            icon == jsonObject.days[1].icon;
+        } else if (day == 3) {
+            icon == jsonObject.days[2].icon;
+        } else if (day == 4) {
+            icon == jsonObject.days[3].icon;
+        } else {
+            icon == jsonObject.days[4].icon;
         }
     }
     
