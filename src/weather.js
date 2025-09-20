@@ -75,15 +75,15 @@ export function loadWeatherPage() {
     weeklyWeatherContainer.appendChild(weatherFive);
 
     const weatherPanels = document.getElementsByClassName('weather-panel');
-    weatherPanels.forEach(weatherPanel => {
+    Array.from(weatherPanels).forEach(weatherPanel => {
         const weatherPanelIcon = document.createElement('img');
-        weatherPanelIcon.classList.add = 'weather-panel-icon';
+        weatherPanelIcon.classList.add('weather-panel-icon');
         weatherPanel.appendChild(weatherPanelIcon);
 
         const weatherPanelText = document.createElement('p');
-        weatherPanelText.classList.add = 'weather-panel-text';
+        weatherPanelText.classList.add('weather-panel-text');
         weatherPanel.appendChild(weatherPanelText);
-    }) 
+    });
 
     function loadCurrentTextContent(unit) {
         let temperature = jsonObject.currentConditions.temp;
@@ -125,20 +125,54 @@ export function loadWeatherPage() {
     }
 
     function loadWeeklyIcons(day) {
+        const weatherPanelIcons = document.getElementsByClassName('weather-panel-icon');
+        let icon = '';
+        let panelIndex = null;
+
         if (day == 1) {
-            icon == jsonObject.days[0].icon;
+            icon = jsonObject.days[0].icon;
+            panelIndex = weatherPanelIcons[0];
         } else if (day == 2) {
-            icon == jsonObject.days[1].icon;
+            icon = jsonObject.days[1].icon;
+            panelIndex = weatherPanelIcons[1];
         } else if (day == 3) {
-            icon == jsonObject.days[2].icon;
+            icon = jsonObject.days[2].icon;
+            panelIndex = weatherPanelIcons[2];
         } else if (day == 4) {
-            icon == jsonObject.days[3].icon;
+            icon = jsonObject.days[3].icon;
+            panelIndex = weatherPanelIcons[3];
         } else {
-            icon == jsonObject.days[4].icon;
+            icon = jsonObject.days[4].icon;
+            panelIndex = weatherPanelIcons[4];
+        }
+
+        if (icon == 'clear-day') {
+            panelIndex.src = clearDay;
+        } else if (icon == 'clear-night') {
+            panelIndex.src = clearNight;
+        } else if (icon == 'cloudy') {
+            panelIndex.src = cloudy;
+        } else if (icon == 'fog') {
+            panelIndex.src = fog;
+        } else if (icon == 'partly-cloudy-day') {
+            panelIndex.src = partlyCloudyDay;
+        } else if (icon == 'partly-cloudy-night') {
+            panelIndex.src = partlyCloudyNight;
+        } else if (icon == 'rain') {
+            panelIndex.src = rain;
+        } else if (icon == 'snow') {
+            panelIndex.src = snow;
+        } else {
+            panelIndex.src = wind;
         }
     }
     
     loadCurrentIcon(jsonObject.currentConditions.icon);
+    loadWeeklyIcons(1);
+    loadWeeklyIcons(2);
+    loadWeeklyIcons(3);
+    loadWeeklyIcons(4);
+    loadWeeklyIcons(5);
     loadCurrentTextContent(temperatureUnit);
 
     toggleButton.addEventListener('click', function() {
