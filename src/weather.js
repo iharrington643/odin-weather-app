@@ -3,9 +3,9 @@ import { jsonObject } from './script.js';
 let temperatureUnit = '°F';
 
 function fahrenheitToCelsius(tempF) {
-    degreesCelsius = (tempF - 32) * (5/9);
-    return degreesCelsius;
-}
+    let degreesCelsius = (tempF - 32) * (5/9);
+    return degreesCelsius.toFixed(1);
+};
 
 export function loadWeatherPage() {
     const unitToggle = document.createElement('div');
@@ -17,18 +17,6 @@ export function loadWeatherPage() {
     toggleButton.innerHTML = `${temperatureUnit}`;
     unitToggle.appendChild(toggleButton);
 
-    toggleButton.addEventListener('click', function() {
-        if (temperatureUnit == '°F') {
-            temperatureUnit = '°C';
-            unitToggle.style.justifyContent = 'flex-end';
-        } else {
-            temperatureUnit = '°F';
-            unitToggle.style.justifyContent = 'flex-start';
-        }
-
-        toggleButton.innerHTML = `${temperatureUnit}`;
-    });
-
     const siteBody = document.getElementById('site-body');
     siteBody.innerHTML = '';
 
@@ -38,10 +26,6 @@ export function loadWeatherPage() {
 
     const currentWeatherPanel = document.createElement('div');
     currentWeatherPanel.id = 'current-weather-panel';
-    currentWeatherPanel.innerHTML = `${jsonObject.resolvedAddress}<br>`;
-    currentWeatherPanel.innerHTML += `${jsonObject.days[0].datetime}<br>`;
-    currentWeatherPanel.innerHTML += `${jsonObject.currentConditions.temp} ${temperatureUnit}<br>`;
-    currentWeatherPanel.innerHTML += `${jsonObject.days[0].tempmin} ${temperatureUnit} - ${jsonObject.days[0].tempmax} ${temperatureUnit}`;
     weatherContainer.appendChild(currentWeatherPanel);
 
     const weeklyWeatherContainer = document.createElement('div');
@@ -72,4 +56,36 @@ export function loadWeatherPage() {
     weatherFive.id = 'weather-five';
     weatherFive.classList.add('weather-panel');
     weeklyWeatherContainer.appendChild(weatherFive);
+
+    function loadTextContent(unit) {
+        let temperature = jsonObject.currentConditions.temp;
+        let minTemp = jsonObject.days[0].tempmin;
+        let maxTemp = jsonObject.days[0].tempmax;
+
+        if (temperatureUnit == '°C') {
+            temperature = fahrenheitToCelsius(temperature);
+            minTemp = fahrenheitToCelsius(minTemp);
+            maxTemp = fahrenheitToCelsius(maxTemp);
+        }
+
+        currentWeatherPanel.innerHTML = `${jsonObject.resolvedAddress}<br>`;
+        currentWeatherPanel.innerHTML += `${jsonObject.days[0].datetime}<br>`;
+        currentWeatherPanel.innerHTML += `${temperature} ${unit}<br>`;
+        currentWeatherPanel.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
+    }
+
+    loadTextContent(temperatureUnit);
+
+    toggleButton.addEventListener('click', function() {
+        if (temperatureUnit == '°F') {
+            temperatureUnit = '°C';
+            unitToggle.style.justifyContent = 'flex-end';
+        } else {
+            temperatureUnit = '°F';
+            unitToggle.style.justifyContent = 'flex-start';
+        }
+
+        toggleButton.innerHTML = `${temperatureUnit}`;
+        loadTextContent(temperatureUnit);
+    });
 }
