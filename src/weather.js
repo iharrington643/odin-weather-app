@@ -1,4 +1,14 @@
 import { jsonObject } from './script.js';
+import clearDay from './images/clear-day.png';
+import clearNight from './images/clear-night.png';
+import cloudy from './images/cloudy.png';
+import fog from './images/fog.png';
+import partlyCloudyDay from './images/partly-cloudy-day';
+import partlyCloudyNight from './images/partly-cloudy-night';
+import rain from './images/rain.png';
+import snow from './images/snow.png';
+import wind from './images/wind.png';
+
 
 let temperatureUnit = '°F';
 
