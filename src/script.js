@@ -15,6 +15,7 @@ function launchSearch() {
         await fetchWeather(searchInput);
         if (validLocation != false) {
             loadWeatherPage();
+            console.log(jsonObject);
         } else {
             alert("Invalid location.  Please try again.");
             searchForm.reset();
