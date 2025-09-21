@@ -211,6 +211,11 @@ export function loadWeatherPage() {
     loadWeeklyIcons(4);
     loadWeeklyIcons(5);
     loadCurrentTextContent(temperatureUnit);
+    loadWeeklyTextContent(1);
+    loadWeeklyTextContent(2);
+    loadWeeklyTextContent(3);
+    loadWeeklyTextContent(4);
+    loadWeeklyTextContent(5);
 
     toggleButton.addEventListener('click', function() {
         if (temperatureUnit == '°F') {
