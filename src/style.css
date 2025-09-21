@@ -30,7 +30,7 @@ body {
 
 #site-body {
     width: max(660px, 100vw);
-    height: max(390px, 90vh);
+    height: max(600px, 90vh);
     display: flex;
     justify-content: center;
     align-items: center;
