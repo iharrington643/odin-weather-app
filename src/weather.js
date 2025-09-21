@@ -227,6 +227,11 @@ export function loadWeatherPage() {
         }
 
         toggleButton.innerHTML = `${temperatureUnit}`;
-        loadCurrentTextContent(temperatureUnit);
+        loadCurrentTextContent();
+        loadWeeklyTextContent(1);
+        loadWeeklyTextContent(2);
+        loadWeeklyTextContent(3);
+        loadWeeklyTextContent(4);
+        loadWeeklyTextContent(5);
     });
 }
