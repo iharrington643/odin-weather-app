@@ -109,8 +109,28 @@ export function loadWeatherPage() {
         let maxTemp = 0;
 
         if (day == 1) {
-            
+            minTemp = jsonObject.days[0].tempmin;
+            maxTemp = jsonObject.days[0].tempmax;
+            panelIndex = weatherPanelTexts[0];
+        } else if (day == 2) {
+            minTemp = jsonObject.days[1].tempmin;
+            maxTemp = jsonObject.days[1].tempmax;
+            panelIndex = weatherPanelTexts[1];
+        } else if (day == 3) {
+            minTemp = jsonObject.days[2].tempmin;
+            maxTemp = jsonObject.days[2].tempmax;
+            panelIndex = weatherPanelTexts[2];
+        } else if (day == 4) {
+            minTemp = jsonObject.days[3].tempmin;
+            maxTemp = jsonObject.days[3].tempmax;
+            panelIndex = weatherPanelTexts[3];
+        } else {
+            minTemp = jsonObject.days[4].tempmin;
+            maxTemp = jsonObject.days[4].tempmax;
+            panelIndex = weatherPanelTexts[4];
         }
+
+        
     }
 
     function loadCurrentIcon(icon) {
