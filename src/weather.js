@@ -130,7 +130,13 @@ export function loadWeatherPage() {
             panelIndex = weatherPanelTexts[4];
         }
 
-        
+        if (temperatureUnit == '°C') {
+            minTemp = fahrenheitToCelsius(minTemp);
+            maxTemp = fahrenheitToCelsius(maxTemp);
+        }
+
+        panelIndex.innerHTML = `${minTemp}<br>`;
+        panelIndex.innerHTML += `${maxTemp}`;
     }
 
     function loadCurrentIcon(icon) {
