@@ -29,8 +29,8 @@ body {
 }
 
 #site-body {
-    width: max(600px, 100vw);
-    height: max(350px, 90vh);
+    width: max(660px, 100vw);
+    height: max(390px, 90vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +92,7 @@ body {
     background-color: rgba(37, 149, 190, 0.709);
     padding: 25px;
     height: clamp(260px, 40vw, 470px);
-    width: clamp(520px, 80vw, 1000px);
+    width: clamp(560px, 80vw, 1000px);
     border-radius: 10px;
 }
 
@@ -121,8 +121,10 @@ body {
     height: 100%;
     background-color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     border-left: 8px solid #F4CE26;
+    font-size: 10px;
 }
 
 .unit-toggle {
@@ -161,7 +163,11 @@ body {
 }
 
 .weather-panel-icon {
-    margin-top: 10%;
-    width: clamp(50px, 60%, 90px);
-    height: 55%;
+    margin-top: 7%;
+    width: clamp(44px, 50%, 80px);
+    height: 49%;
+}
+
+.weather-panel-text {
+    font-size: clamp(8px, 1.1vw, 14px);
 }
