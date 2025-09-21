@@ -123,6 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-left: 8px solid #F4CE26;
     font-size: 10px;
 }
