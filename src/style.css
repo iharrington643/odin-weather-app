@@ -155,13 +155,13 @@ body {
 }
 
 #current-weather-icon {
-    margin-left: 25px;
+    margin-left: 4%;
     width: 19%;
     height: 65%;
 }
 
 .weather-panel-icon {
-    margin-top: 12px;
-    width: max(55px, 52%);
+    margin-top: 10%;
+    width: clamp(50px, 60%, 90px);
     height: 55%;
 }
