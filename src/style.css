@@ -120,6 +120,8 @@ body {
     width: max(80px, 18%);
     height: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
     border-left: 8px solid #F4CE26;
 }
 
@@ -156,4 +158,10 @@ body {
     margin-left: 25px;
     width: 19%;
     height: 65%;
+}
+
+.weather-panel-icon {
+    margin-top: 12px;
+    width: max(55px, 52%);
+    height: 55%;
 }
