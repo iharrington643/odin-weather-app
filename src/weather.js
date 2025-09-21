@@ -102,6 +102,17 @@ export function loadWeatherPage() {
         currentWeatherText.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
     }
 
+    function loadWeeklyTextContent(day) {
+        const weatherPanelTexts = document.getElementsByClassName('weather-panel-text');
+        let panelIndex = null;
+        let minTemp = 0;
+        let maxTemp = 0;
+
+        if (day == 1) {
+            
+        }
+    }
+
     function loadCurrentIcon(icon) {
         if (icon == 'clear-day') {
             currentWeatherIcon.src = clearDay;
