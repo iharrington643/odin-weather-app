@@ -85,7 +85,7 @@ export function loadWeatherPage() {
         weatherPanel.appendChild(weatherPanelText);
     });
 
-    function loadCurrentTextContent(unit) {
+    function loadCurrentTextContent() {
         let temperature = jsonObject.currentConditions.temp;
         let minTemp = jsonObject.days[0].tempmin;
         let maxTemp = jsonObject.days[0].tempmax;
@@ -98,8 +98,8 @@ export function loadWeatherPage() {
 
         currentWeatherText.innerHTML = `${jsonObject.address}<br>`;
         currentWeatherText.innerHTML += `${jsonObject.days[0].datetime}<br>`;
-        currentWeatherText.innerHTML += `${temperature} ${unit}<br>`;
-        currentWeatherText.innerHTML += `${minTemp} ${unit} - ${maxTemp} ${unit}`;
+        currentWeatherText.innerHTML += `${temperature} ${temperatureUnit}<br>`;
+        currentWeatherText.innerHTML += `${minTemp} ${temperatureUnit} - ${maxTemp} ${temperatureUnit}`;
     }
 
     function loadWeeklyTextContent(day) {
@@ -210,7 +210,7 @@ export function loadWeatherPage() {
     loadWeeklyIcons(3);
     loadWeeklyIcons(4);
     loadWeeklyIcons(5);
-    loadCurrentTextContent(temperatureUnit);
+    loadCurrentTextContent();
     loadWeeklyTextContent(1);
     loadWeeklyTextContent(2);
     loadWeeklyTextContent(3);
