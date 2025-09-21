@@ -135,7 +135,7 @@ export function loadWeatherPage() {
             maxTemp = fahrenheitToCelsius(maxTemp);
         }
 
-        panelIndex.innerHTML = `${minTemp} ${temperatureUnit}<br>`;
+        panelIndex.innerHTML = `<span style="color: gray;">${minTemp} ${temperatureUnit}</span><br>`;
         panelIndex.innerHTML += `${maxTemp} ${temperatureUnit}`;
     }
 
