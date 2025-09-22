@@ -132,9 +132,9 @@ export function loadWeatherPage() {
             maxTemp = fahrenheitToCelsius(maxTemp);
         }
 
-        currentWeatherText.innerHTML = `<span style="font-weight: bold; font-size: 1.5em">${jsonObject.resolvedAddress}</span><br>`;
+        currentWeatherText.innerHTML = `<span style="font-weight: bold; font-size: 1.3em;">${jsonObject.resolvedAddress}</span><br>`;
         currentWeatherText.innerHTML += `<span style="font-size: 0.7em;">${date}</span><br><br>`;
-        currentWeatherText.innerHTML += `<span style="font-size: 3em; font-weight: bold;">${temperature} ${temperatureUnit}</span><br>`;
+        currentWeatherText.innerHTML += `<span style="font-size: 2.8em; font-weight: bold;">${temperature} ${temperatureUnit}</span><br>`;
         currentWeatherText.innerHTML += `<span style="font-size: 0.9em;">${minTemp} ${temperatureUnit} - ${maxTemp} ${temperatureUnit} • ${weatherCondition}</span>`;
     }
 
