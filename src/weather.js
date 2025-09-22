@@ -87,8 +87,26 @@ export function loadWeatherPage() {
 
     function loadCurrentTextContent() {
         let temperature = jsonObject.currentConditions.temp;
+        let icon = jsonObject.currentConditions.icon;
+        let weatherCondition = '';
         let minTemp = jsonObject.days[0].tempmin;
         let maxTemp = jsonObject.days[0].tempmax;
+
+        if (icon == 'clear-day' || icon == 'clear-night') {
+            weatherCondition = 'Clear';
+        } else if (icon == 'partly-cloudy-day' || icon == 'partly-cloudy-night') {
+            weatherCondition = 'Partly Cloudy';
+        } else if (icon == 'cloudy') {
+            weatherCondition = 'Cloudy';
+        } else if (icon == 'rain') {
+            weatherCondition = 'Rainy';
+        } else if (icon == 'snow') {
+            weatherCondition = 'Snowy';
+        } else if (icon == 'fog') {
+            weatherCondition = 'Foggy';
+        } else {
+            weatherCondition = 'Windy';
+        }
 
         if (temperatureUnit == '°C') {
             temperature = fahrenheitToCelsius(temperature);
@@ -98,7 +116,7 @@ export function loadWeatherPage() {
 
         currentWeatherText.innerHTML = `${jsonObject.address}<br>`;
         currentWeatherText.innerHTML += `${jsonObject.days[0].datetime}<br>`;
-        currentWeatherText.innerHTML += `${temperature} ${temperatureUnit}<br>`;
+        currentWeatherText.innerHTML += `${temperature} ${temperatureUnit} - ${weatherCondition}<br>`;
         currentWeatherText.innerHTML += `${minTemp} ${temperatureUnit} - ${maxTemp} ${temperatureUnit}`;
     }
 
@@ -139,7 +157,9 @@ export function loadWeatherPage() {
         panelIndex.innerHTML += `${maxTemp} ${temperatureUnit}`;
     }
 
-    function loadCurrentIcon(icon) {
+    function loadCurrentIcon() {
+        let icon = jsonObject.currentConditions.icon;
+
         if (icon == 'clear-day') {
             currentWeatherIcon.src = clearDay;
         } else if (icon == 'clear-night') {
