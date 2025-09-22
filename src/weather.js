@@ -128,10 +128,10 @@ export function loadWeatherPage() {
             maxTemp = fahrenheitToCelsius(maxTemp);
         }
 
-        currentWeatherText.innerHTML = `${jsonObject.resolvedAddress}<br>`;
-        currentWeatherText.innerHTML += `${date}<br>`;
-        currentWeatherText.innerHTML += `${temperature} ${temperatureUnit} - ${weatherCondition}<br>`;
-        currentWeatherText.innerHTML += `${minTemp} ${temperatureUnit} - ${maxTemp} ${temperatureUnit}`;
+        currentWeatherText.innerHTML = `<span style="font-weight: bold; font-size: 1.5em">${jsonObject.resolvedAddress}</span><br>`;
+        currentWeatherText.innerHTML += `<span style="font-size: 0.7em;">${date}</span><br><br>`;
+        currentWeatherText.innerHTML += `<span style="font-size: 3em; font-weight: bold;">${temperature} ${temperatureUnit}</span><br>`;
+        currentWeatherText.innerHTML += `<span style="font-size: 0.9em;">${minTemp} ${temperatureUnit} - ${maxTemp} ${temperatureUnit} • ${weatherCondition}</span>`;
     }
 
     function loadWeeklyTextContent(day) {

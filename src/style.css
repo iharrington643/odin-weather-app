@@ -105,7 +105,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 25px;
+    gap: 4%;
+    font-size: 18px;
 }
 
 #weekly-weather-container {
@@ -153,8 +154,7 @@ body {
 }
 
 #current-weather-text {
-    font-family: 'Poppins';
-    font-size: 18px;
+    font-size: max(11px, 1.3vw);
 }
 
 #current-weather-icon {
