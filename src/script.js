@@ -26,7 +26,7 @@ function launchSearch() {
 
 async function fetchWeather(location) {
     try {
-        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=B9GWLUJEUZVXAPLZ6RJ3G6566`);
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=B9GWLUJEUZVXAPLZ6RJ3G6566&lang=en`);
         
         if (!response.ok) {
             throw new Error(`Status: ${response.status}`);
