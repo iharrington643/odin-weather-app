@@ -1,12 +1,14 @@
 import logoImage from './images/weather-svgrepo-com.svg';
 
 export function loadHome() {
+    document.body.innerHTML = '';
+
     const homeHeader = document.createElement('header');
     homeHeader.classList.add('home-header');
     document.body.appendChild(homeHeader);
 
     const headerLogo = document.createElement('img');
-    headerLogo.classList.add('header-logo');
+    headerLogo.id = 'header-logo';
     headerLogo.src = logoImage;
     homeHeader.appendChild(headerLogo);
 

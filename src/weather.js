@@ -1,3 +1,5 @@
+import { loadHome } from './home.js';
+import { launchSearch } from './script.js';
 import { jsonObject } from './script.js';
 import clearDay from './images/clear-day.png';
 import clearNight from './images/clear-night.png';
@@ -30,6 +32,8 @@ function getDate() {
 }
 
 export function loadWeatherPage() {
+    const headerLogo = document.getElementById('header-logo');
+
     const unitToggle = document.createElement('div');
     unitToggle.classList.add('unit-toggle');
     document.body.appendChild(unitToggle);
@@ -268,4 +272,9 @@ export function loadWeatherPage() {
         loadWeeklyTextContent(4);
         loadWeeklyTextContent(5);
     });
+
+    headerLogo.addEventListener('click', function() {
+        loadHome();
+        launchSearch();
+    })
 }

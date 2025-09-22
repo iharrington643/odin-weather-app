@@ -4,8 +4,9 @@ import { loadWeatherPage } from './weather.js';
 
 export let jsonObject = {};
 let validLocation = true;
+const headerLogo = document.getElementById('header-logo');
 
-function launchSearch() {
+export function launchSearch() {
     const searchForm = document.getElementById('search-form');
 
     searchForm.addEventListener('submit', async function(event) {
@@ -15,7 +16,6 @@ function launchSearch() {
         await fetchWeather(searchInput);
         if (validLocation != false) {
             loadWeatherPage();
-            console.log(jsonObject);
         } else {
             alert("Invalid location.  Please try again.");
             searchForm.reset();
