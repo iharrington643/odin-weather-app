@@ -4,7 +4,6 @@ import { loadWeatherPage } from './weather.js';
 
 export let jsonObject = {};
 let validLocation = true;
-const headerLogo = document.getElementById('header-logo');
 
 export function launchSearch() {
     const searchForm = document.getElementById('search-form');
