@@ -16,6 +16,19 @@ function fahrenheitToCelsius(tempF) {
     return degreesCelsius.toFixed(1);
 };
 
+function getDate() {
+    const date = new Date();
+
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }
+
+    return date.toLocaleDateString('en-US', options);
+}
+
 export function loadWeatherPage() {
     const unitToggle = document.createElement('div');
     unitToggle.classList.add('unit-toggle');
@@ -86,6 +99,7 @@ export function loadWeatherPage() {
     });
 
     function loadCurrentTextContent() {
+        let date = getDate();
         let temperature = jsonObject.currentConditions.temp;
         let icon = jsonObject.currentConditions.icon;
         let weatherCondition = '';
@@ -114,8 +128,8 @@ export function loadWeatherPage() {
             maxTemp = fahrenheitToCelsius(maxTemp);
         }
 
-        currentWeatherText.innerHTML = `${jsonObject.address}<br>`;
-        currentWeatherText.innerHTML += `${jsonObject.days[0].datetime}<br>`;
+        currentWeatherText.innerHTML = `${jsonObject.resolvedAddress}<br>`;
+        currentWeatherText.innerHTML += `${date}<br>`;
         currentWeatherText.innerHTML += `${temperature} ${temperatureUnit} - ${weatherCondition}<br>`;
         currentWeatherText.innerHTML += `${minTemp} ${temperatureUnit} - ${maxTemp} ${temperatureUnit}`;
     }
