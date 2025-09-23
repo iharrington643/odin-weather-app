@@ -32,17 +32,7 @@ function getDate() {
 }
 
 export function loadWeatherPage() {
-    const homeHeader = document.getElementById('home-header');
     const headerLogo = document.getElementById('header-logo');
-
-    const unitToggle = document.createElement('div');
-    unitToggle.classList.add('unit-toggle');
-    homeHeader.appendChild(unitToggle);
-
-    const toggleButton = document.createElement('button');
-    toggleButton.classList.add('toggle-button');
-    toggleButton.innerHTML = `${temperatureUnit}`;
-    unitToggle.appendChild(toggleButton);
 
     const siteBody = document.getElementById('site-body');
     siteBody.innerHTML = '';
@@ -54,6 +44,15 @@ export function loadWeatherPage() {
     const currentWeatherPanel = document.createElement('div');
     currentWeatherPanel.id = 'current-weather-panel';
     weatherContainer.appendChild(currentWeatherPanel);
+
+    const unitToggle = document.createElement('div');
+    unitToggle.classList.add('unit-toggle');
+    currentWeatherPanel.appendChild(unitToggle);
+
+    const toggleButton = document.createElement('button');
+    toggleButton.classList.add('toggle-button');
+    toggleButton.innerHTML = `${temperatureUnit}`;
+    unitToggle.appendChild(toggleButton);
 
     const currentWeatherIcon = document.createElement('img');
     currentWeatherIcon.id = 'current-weather-icon';

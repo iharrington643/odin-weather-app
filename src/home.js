@@ -46,4 +46,10 @@ export function loadHome() {
     searchBar.placeholder = 'Search for a location...';
     searchBar.id = 'search-bar';
     searchForm.appendChild(searchBar);
+
+    const submitButton = document.createElement('button');
+    submitButton.id = 'submit-button';
+    submitButton.type = 'submit';
+    submitButton.textContent = '⌕';
+    searchForm.appendChild(submitButton);
 }
