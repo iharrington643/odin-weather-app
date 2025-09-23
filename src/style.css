@@ -6,7 +6,7 @@ body {
     font-family: Poppins;
 }
 
-.home-header {
+#home-header {
     margin: 0;
     padding-left: max(20px, 2vw);
     width: 96vw;
@@ -52,6 +52,7 @@ body {
 }
 
 #search-bar {
+    background-color: white;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;

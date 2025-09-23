@@ -32,11 +32,12 @@ function getDate() {
 }
 
 export function loadWeatherPage() {
+    const homeHeader = document.getElementById('home-header');
     const headerLogo = document.getElementById('header-logo');
 
     const unitToggle = document.createElement('div');
     unitToggle.classList.add('unit-toggle');
-    document.body.appendChild(unitToggle);
+    homeHeader.appendChild(unitToggle);
 
     const toggleButton = document.createElement('button');
     toggleButton.classList.add('toggle-button');

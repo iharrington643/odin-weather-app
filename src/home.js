@@ -4,7 +4,7 @@ export function loadHome() {
     document.body.innerHTML = '';
 
     const homeHeader = document.createElement('header');
-    homeHeader.classList.add('home-header');
+    homeHeader.id = 'home-header';
     document.body.appendChild(homeHeader);
 
     const headerLogo = document.createElement('img');
