@@ -132,8 +132,8 @@ body {
 
 .unit-toggle {
     position: absolute;
-    top: 3%;
-    right: 2%;
+    top: 3vh;
+    right: 2vh;
     width: 60px;
     height: 35px;
     background-color: rgb(37, 150, 190);
