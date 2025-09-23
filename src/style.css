@@ -13,7 +13,7 @@ body {
     width: 96vw;
     height: max(70px, 10vh);
     background-color: white;
-    display: grid;
+    display: flex;
     gap: 5px;
     align-items: center;
 }
