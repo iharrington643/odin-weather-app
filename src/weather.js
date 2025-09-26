@@ -274,7 +274,14 @@ export function loadWeatherPage() {
     });
 
     headerLogo.addEventListener('click', function() {
+
+        // Reset temp unit and toggle switch position
+        temperatureUnit = '°F';
+        unitToggle.style.justifyContent = 'flex-start';
+
+        // Return to home page using loadHome()
         loadHome();
+        // launchSearch() so that API data can be properly searched for and fetched
         launchSearch();
     })
 }
