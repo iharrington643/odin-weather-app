@@ -1,8 +1,10 @@
 import logoImage from './images/weather-svgrepo-com.svg';
 
 export function loadHome() {
+    // Clear out the document body's contents every time loadHome() is iterated
     document.body.innerHTML = '';
 
+    // Create header and its corresponding text and logo elements
     const homeHeader = document.createElement('header');
     homeHeader.id = 'home-header';
     document.body.appendChild(homeHeader);
@@ -17,10 +19,12 @@ export function loadHome() {
     headerText.innerHTML = 'Weather<b><span style="color: #F4CE26;">Cast</span></b>';
     homeHeader.appendChild(headerText);
 
+    // Create site body to separate the rest of the page from the header
     const siteBody = document.createElement('div');
     siteBody.id = 'site-body';
     document.body.appendChild(siteBody);
 
+    // Create search container comprised of a heading, description, and search form
     const searchContainer = document.createElement('div');
     searchContainer.id = 'search-container';
     siteBody.appendChild(searchContainer);
@@ -41,6 +45,7 @@ export function loadHome() {
     searchForm.id = 'search-form';
     searchContainer.appendChild(searchForm);
 
+    // Create a search bar input element and a submit button to create a functional search tool
     const searchBar = document.createElement('input');
     searchBar.setAttribute("type", "search");
     searchBar.placeholder = 'Search for a location...';
