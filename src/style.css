@@ -77,7 +77,9 @@ body {
     color: white;
     transform: scaleX(-1);
     font-size: 40px;
-    margin-bottom: 24px;
+    margin-bottom: 23.5px;
+    font-family: Helvetica;
+    font-weight: bold;
 }
 
 #search-heading {
