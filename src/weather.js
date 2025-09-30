@@ -51,6 +51,11 @@ export function loadWeatherPage() {
     weatherContainer.id = 'weather-container';
     siteBody.appendChild(weatherContainer);
 
+    // Create currentWeatherPanel and its corresponding icon and text elements for displaying daily weather
+    const currentWeatherPanel = document.createElement('div');
+    currentWeatherPanel.id = 'current-weather-panel';
+    weatherContainer.appendChild(currentWeatherPanel);
+
     // Create unitToggle div and its child element toggleButton to simulate a toggle button
     const unitToggle = document.createElement('div');
     unitToggle.classList.add('unit-toggle');
@@ -61,11 +66,6 @@ export function loadWeatherPage() {
     // Set the innerHTMl of toggleButton equal to the current temperature unit
     toggleButton.innerHTML = `${temperatureUnit}`;
     unitToggle.appendChild(toggleButton);
-
-    // Create currentWeatherPanel and its corresponding icon and text elements for displaying daily weather
-    const currentWeatherPanel = document.createElement('div');
-    currentWeatherPanel.id = 'current-weather-panel';
-    weatherContainer.appendChild(currentWeatherPanel);
 
     const currentWeatherIcon = document.createElement('img');
     currentWeatherIcon.id = 'current-weather-icon';
